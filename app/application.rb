@@ -11,12 +11,22 @@ class Application
     end
 
     # Soccer Team Create
-    if req.path.match(/soccer_teams/) && req.post?
+    if req.path.match('/soccer_teams/') && req.post?
       body = JSON.parse(req.body.read)
       soccer_team = SoccerTeam.create(body)
       return [201, {'Content-Type' => 'application/json'}, [soccer_team.to_json]]
     end
 
+    #Soccer Team Show
+    if req.path.match('/soccer_teams/') && req.get?
+      id = req.path.split('/')[2]
+      begin
+        soccer_team = SoccerTeam.find(id)
+        return [200, {'Content-Type' => 'application/json'},[soccer_team.to_json]]
+      rescue 
+        return [404, {'Content-Type' => 'application/json'}, [{message: 'soccer team not found'}.to_json]]
+      end
+    end
 
     res.finish
   end
