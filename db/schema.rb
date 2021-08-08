@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_08_024449) do
+ActiveRecord::Schema.define(version: 2021_08_08_160944) do
 
   create_table "soccer_players", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_08_08_024449) do
     t.string "img_url"
     t.integer "soccer_team_id"
     t.string "position"
+    t.string "country"
     t.index ["soccer_team_id"], name: "index_soccer_players_on_soccer_team_id"
   end
 

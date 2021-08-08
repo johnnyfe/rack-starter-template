@@ -4,13 +4,19 @@ class Application
     res = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path.match(/test/) 
-      return [200, { 'Content-Type' => 'application/json' }, [ {:message => "test response!"}.to_json ]]
+    # Soccer Team Index
 
-    else
-      res.write "Path Not Found"
-
+    if req.path == ('/soccer_teams') && req.get?
+      return [200, {'Content-Type' => 'application/json'},[SoccerTeam.all.to_json]]
     end
+
+    # Soccer Team Create
+    if req.path.match(/soccer_teams/) && req.post?
+      body = JSON.parse(req.body.read)
+      soccer_team = SoccerTeam.create(body)
+      return [201, {'Content-Type' => 'application/json'}, [soccer_team.to_json]]
+    end
+
 
     res.finish
   end
