@@ -4,6 +4,8 @@ class Application
     res = Rack::Response.new
     req = Rack::Request.new(env)
 
+    #SOCCER ROUTES
+
     # Soccer Team Index
 
     if req.path == ('/soccer_teams') && req.get?
@@ -29,7 +31,7 @@ class Application
     end
 
     #Soccer Team Update
-    if req.path.match('/soccer_teams') && req.patch?
+    if req.path.match('/soccer_teams/') && req.patch?
       id = req.path.split('/')[2]
       body = JSON.parse(req.body.read)
       begin
@@ -42,6 +44,28 @@ class Application
         return [422, {'Content-Type' => 'application/json'}, [{message: 'Could not process your update'}.to_json]]
       end
     end
+
+    #Soccer Team Delete
+
+    if req.path.match('/soccer_teams/') && req.delete?
+      id = req.path.split('/')[2]
+      begin
+        soccer_team = SoccerTeam.find(id)
+        soccer_team.destroy
+        return [202, {'Content-Type' => 'application/json'}, [soccer_team.to_json]]
+      rescue 
+        return [404, {'Content-Type' => 'application/json'}, [{message: 'soccer team not found'}.to_json]]
+      end
+    end
+
+    #SOCCER PLAYER ROUTES
+
+    # Soccer Team Index
+
+    if req.path == ('/soccer_players') && req.get?
+      return [200, {'Content-Type' => 'application/json'},[SoccerPlayer.all.to_json]]
+    end
+
 
     res.finish
   end
