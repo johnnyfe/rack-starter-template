@@ -1,0 +1,35 @@
+=> [[32m#<SoccerTeam:0x000055d80854bc40[0m
+  id: [1;34m1[0m,
+  name: [31m[1;31m"[0m[31mReal Madrid[1;31m"[0m[31m[0m,
+  founded: [1;34m1929[0m-[1;34m05[0m-[1;34m05[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m [1;34;4mUTC[0m,
+  country: [31m[1;31m"[0m[31mIran[1;31m"[0m[31m[0m,
+  manager: [31m[1;31m"[0m[31mZinedine Zidane[1;31m"[0m[31m[0m,
+  img_url: [31m[1;31m"[0m[31mhttps://content.sportslogos.net/logos/130/4025/thumbs/wyjvrxyhwca77k3fzef8nc957.gif[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<SoccerTeam:0x000055d808548e78[0m
+  id: [1;34m2[0m,
+  name: [31m[1;31m"[0m[31mReal Madrid[1;31m"[0m[31m[0m,
+  founded: [1;34m1889[0m-[1;34m01[0m-[1;34m10[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m [1;34;4mUTC[0m,
+  country: [31m[1;31m"[0m[31mTunisia[1;31m"[0m[31m[0m,
+  manager: [31m[1;31m"[0m[31mMassimiliano Allegri[1;31m"[0m[31m[0m,
+  img_url: [31m[1;31m"[0m[31mhttps://content.sportslogos.net/logos/132/4164/thumbs/mm5fmzi4ogxm6948w4bzerkue.gif[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<SoccerTeam:0x000055d808548d10[0m
+  id: [1;34m3[0m,
+  name: [31m[1;31m"[0m[31mAtletico Madrid[1;31m"[0m[31m[0m,
+  founded: [1;34m1911[0m-[1;34m09[0m-[1;34m25[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m [1;34;4mUTC[0m,
+  country: [31m[1;31m"[0m[31mGermany[1;31m"[0m[31m[0m,
+  manager: [31m[1;31m"[0m[31mThomas Tuchel[1;31m"[0m[31m[0m,
+  img_url: [31m[1;31m"[0m[31mhttps://content.sportslogos.net/logos/130/4018/thumbs/hrhzmgl1gxoshl08h665ljjmh.gif[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<SoccerTeam:0x000055d808548ba8[0m
+  id: [1;34m4[0m,
+  name: [31m[1;31m"[0m[31mGalatasaray[1;31m"[0m[31m[0m,
+  founded: [1;34m1960[0m-[1;34m05[0m-[1;34m12[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m [1;34;4mUTC[0m,
+  country: [31m[1;31m"[0m[31mPortugal[1;31m"[0m[31m[0m,
+  manager: [31m[1;31m"[0m[31mJupp Heyneckes[1;31m"[0m[31m[0m,
+  img_url: [31m[1;31m"[0m[31mhttps://content.sportslogos.net/logos/128/3997/thumbs/399744882017.gif[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<SoccerTeam:0x000055d808548a68[0m
+  id: [1;34m5[0m,
+  name: [31m[1;31m"[0m[31mJuventus[1;31m"[0m[31m[0m,
+  founded: [1;34m2001[0m-[1;34m06[0m-[1;34m10[0m [1;34m00[0m:[1;34m00[0m:[1;34m00[0m [1;34;4mUTC[0m,
+  country: [31m[1;31m"[0m[31mSenegal[1;31m"[0m[31m[0m,
+  manager: [31m[1;31m"[0m[31mArsene Wenger[1;31m"[0m[31m[0m,
+  img_url: [31m[1;31m"[0m[31mhttps://content.sportslogos.net/logos/130/4025/thumbs/wyjvrxyhwca77k3fzef8nc957.gif[1;31m"[0m[31m[0m[32m>[0m]

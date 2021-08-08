@@ -1,2 +1,2 @@
-class SoccerPlayer < ActiveRecord::Base
+class SoccerTeam < ActiveRecord::Base
 end
