@@ -73,6 +73,18 @@ class Application
       return [201, {'Content-Type' => 'application/json'}, [soccer_player.to_json]]
     end
 
+    #Soccer Player Show
+    if req.path.match('/soccer_players/') && req.get?
+      id = req.path.split('/')[2]
+      begin
+        soccer_player = SoccerPlayer.find(id)
+        return [200, {'Content-Type' => 'application/json'},[soccer_player.to_json]]
+      rescue 
+        return [404, {'Content-Type' => 'application/json'}, [{message: 'soccer player not found'}.to_json]]
+      end
+    end
+
+
     res.finish
   end
 
