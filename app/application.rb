@@ -84,6 +84,21 @@ class Application
       end
     end
 
+    #Soccer Player Update
+    if req.path.match('/soccer_players/') && req.patch?
+      id = req.path.split('/')[2]
+      body = JSON.parse(req.body.read)
+      begin
+        soccer_player = SoccerPlayer.find(id)
+        soccer_player.update(body)
+        return [202, {'Content-Type' => 'application/json'}, [soccer_player.to_json]]
+      rescue ActiveRecord::RecordNotFound
+        return [404, {'Content-Type' => 'application/json'}, [{message: 'soccer player not found'}.to_json]]
+      rescue ActiveRecord::UnknownAttributeError
+        return [422, {'Content-Type' => 'application/json'}, [{message: 'Could not process your update'}.to_json]]
+      end
+    end
+
 
     res.finish
   end
