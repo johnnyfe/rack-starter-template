@@ -13,7 +13,7 @@ class Application
     end
 
     # Soccer Team Create
-    if req.path.match('/soccer_teams/') && req.post?
+    if req.path == ('/soccer_teams') && req.post?
       body = JSON.parse(req.body.read)
       soccer_team = SoccerTeam.create(body)
       return [201, {'Content-Type' => 'application/json'}, [soccer_team.to_json]]
@@ -60,12 +60,18 @@ class Application
 
     #SOCCER PLAYER ROUTES
 
-    # Soccer Team Index
+    # Soccer Player Index
 
     if req.path == ('/soccer_players') && req.get?
       return [200, {'Content-Type' => 'application/json'},[SoccerPlayer.all.to_json]]
     end
 
+    # Soccer Player Create
+    if req.path == ('/soccer_players') && req.post?
+      body = JSON.parse(req.body.read)
+      soccer_player = SoccerPlayer.create(body)
+      return [201, {'Content-Type' => 'application/json'}, [soccer_player.to_json]]
+    end
 
     res.finish
   end
