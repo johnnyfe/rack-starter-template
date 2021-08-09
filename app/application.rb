@@ -22,9 +22,18 @@ class Application
     #Soccer Team Show
     if req.path.match('/soccer_teams/') && req.get?
       id = req.path.split('/')[2]
-      begin
-        soccer_team = SoccerTeam.find(id)
-        return [200, {'Content-Type' => 'application/json'},[soccer_team.to_json]]
+      soccer_team = SoccerTeam.find_by(id: id)
+      begin 
+        soccer_players = soccer_team.soccer_players
+        soccer_team_res = {
+          name: soccer_team.name,
+          founded: soccer_team.founded,
+          country: soccer_team.country,
+          manager: soccer_team.manager,
+          img_url: soccer_team.img_url,
+          soccer_players: soccer_players
+        }
+        return [200, {'Content-Type' => 'application/json'},[soccer_team_res.to_json]]
       rescue 
         return [404, {'Content-Type' => 'application/json'}, [{message: 'soccer team not found'}.to_json]]
       end
