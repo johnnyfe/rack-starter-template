@@ -23,15 +23,41 @@ logos = [
     'https://content.sportslogos.net/logos/132/4164/thumbs/mm5fmzi4ogxm6948w4bzerkue.gif'
     ]
 
- 4.times do
-    SoccerTeam.create(
+ 
+  t1 =  SoccerTeam.create(
         name: Faker::Sports::Football.team,
         founded: Faker::Date.between(from: '1857-01-01', to: '2021-12-01'),
         country: Faker::WorldCup.team,
         manager: Faker::Sports::Football.coach,
         img_url: logos.shuffle.sample
-    )
-end
+    );
+
+    t2 =  SoccerTeam.create(
+        name: Faker::Sports::Football.team,
+        founded: Faker::Date.between(from: '1857-01-01', to: '2021-12-01'),
+        country: Faker::WorldCup.team,
+        manager: Faker::Sports::Football.coach,
+        img_url: logos.shuffle.sample
+    );
+
+    t3 =  SoccerTeam.create(
+        name: Faker::Sports::Football.team,
+        founded: Faker::Date.between(from: '1857-01-01', to: '2021-12-01'),
+        country: Faker::WorldCup.team,
+        manager: Faker::Sports::Football.coach,
+        img_url: logos.shuffle.sample
+    );
+    
+    t4 =  SoccerTeam.create(
+        name: Faker::Sports::Football.team,
+        founded: Faker::Date.between(from: '1857-01-01', to: '2021-12-01'),
+        country: Faker::WorldCup.team,
+        manager: Faker::Sports::Football.coach,
+        img_url: logos.shuffle.sample
+    );
+
+
+
 
 puts "Seeding Soccer Players"
 
@@ -74,7 +100,8 @@ photos = [
         yellow_cards: rand(0..20),
         red_cards: rand(0..10),
         position: Faker::Sports::Football.position,
-        img_url: photos.shuffle.sample
+        img_url: photos.shuffle.sample,
+        soccer_team: [t1,t2,t3,t4].sample
     )
 end
     
